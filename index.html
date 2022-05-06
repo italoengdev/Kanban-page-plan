@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Tarefas Kanban Style</title>
+  </head>
+  <body>
+    <div class="board">
+      <h3>A fazer</h3>
+
+      <ul id="todo" ondrop="drop(event, this.id)" ondragover="over(event)">
+        <li id="1" draggable="true" ondragstart="drag(event)">
+          <p>Dormir</p>
+          <p class="remove" onclick="removeCard(this)">x</p>
+        </li>
+        <li id="2" draggable="true" ondragstart="drag(event)">
+          <p>Estudar CSS</p>
+          <p class="remove" onclick="removeCard(this)">x</p>
+        </li>
+      </ul>
+
+      <div class="add-card" onclick="addCard(this)">
+        <p>Adicionar Tarefa</p>
+      </div>
+    </div>
+    <div class="board">
+      <h3>Fazendo</h3>
+      <ul
+        id="doing"
+        ondrop="drop(event, this.id)"
+        ondragover="over(event)"
+      ></ul>
+      <div class="add-card" onclick="addCard(this)">
+        <p>Adicionar Tarefa</p>
+      </div>
+    </div>
+    <div class="board">
+      <h3>Completo</h3>
+      <ul id="done" ondrop="drop(event, this.id)" ondragover="over(event)"></ul>
+      <div class="add-card" onclick="addCard(this)">
+        <p>Adicionar Tarefa</p>
+      </div>
+    </div>
+    <script src="/script/index.js"></script>
+  </body>
+</html>
