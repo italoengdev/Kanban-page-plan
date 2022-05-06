@@ -20,6 +20,9 @@ function addCard(elemento) {
   const text = prompt('Qual é a tarefa?')
   const board = document.getElementById(ulId)
   console.log(board)
+  if (text.length > 30) {
+    alert("Reduza o tamanho de sua tarefa!")
+  }
   const template = `
          <li id="${new Date().getTime()}" draggable="true" ondragstart="drag(event)">
           <p>${text}</p>
